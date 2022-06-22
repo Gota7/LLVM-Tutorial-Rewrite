@@ -1,0 +1,16 @@
+Ready> Read function definition:define double @"unary!"(double %x) {
+entry:
+  %ifcond = fcmp ueq double %x, 0.000000e+00
+  %. = select i1 %ifcond, double 1.000000e+00, double 0.000000e+00
+  ret double %.
+}
+
+Ready> Read function definition:define double @test2(double %x) {
+entry:
+  %unop = call double @"unary!"(double %x)
+  ret double %unop
+}
+
+Ready> Evaluated to 1.000000.
+Ready> Evaluated to 0.000000.
+Ready> %

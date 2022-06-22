@@ -1,0 +1,17 @@
+; ModuleID = 'test.bc'
+source_filename = "Super Epic JIT"
+
+define double @equal(double %x, double %y) {
+entry:
+  %cmptmp = fcmp ult double %x, %y
+  %cmptmp1 = fcmp ugt double %x, %y
+  %. = select i1 %cmptmp1, double 0.000000e+00, double 1.000000e+00
+  %iftmp7 = select i1 %cmptmp, double 0.000000e+00, double %.
+  ret double %iftmp7
+}
+
+define double @__anon_expr() {
+entry:
+  %calltmp = call double @equal(double 3.000000e+00, double 7.000000e+00)
+  ret double %calltmp
+}

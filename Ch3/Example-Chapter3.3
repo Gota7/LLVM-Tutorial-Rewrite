@@ -1,0 +1,13 @@
+; ModuleID = 'test.bc'
+source_filename = "Super Epic JIT"
+
+declare double @sin(double)
+
+define double @__anon_expr() {
+entry:
+  ret double 0x400A492492492492
+
+entry1:                                           ; No predecessors!
+  %calltmp = call double @sin(double 3.000000e+00)
+  ret double %calltmp
+}

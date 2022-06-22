@@ -1,0 +1,11 @@
+Ready> Read extern: declare double @sin(double)
+
+Ready> Ready> Read function definition:define double @add(double %x, double %y) {
+entry:
+  %calltmp = call double @sin(double %y)
+  %addtmp = fadd double %x, %calltmp
+  ret double %addtmp
+}
+
+Ready> Evaluated to 3.656987.
+Ready> % 

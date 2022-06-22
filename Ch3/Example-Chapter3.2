@@ -1,0 +1,14 @@
+; ModuleID = 'test.bc'
+source_filename = "Super Epic JIT"
+
+define double @square(double %x) {
+entry:
+  %multmp = fmul double %x, %x
+  ret double %multmp
+}
+
+define double @__anon_expr() {
+entry:
+  %calltmp = call double @square(double 2.000000e+00)
+  ret double %calltmp
+}

@@ -1,0 +1,5 @@
+1. Allman braces are used.
+2. All enumerations, structs, functions, etc. are defined in header files.
+3. Only structs are to be used with members having comments on the side and functions having description comments above them.
+4. No using namespace statements.
+5. Includes are sorted by alphabetical order, with the exeption of <> includes being below "" includes, and the corresponding "" h include for the current cpp file is at the top.

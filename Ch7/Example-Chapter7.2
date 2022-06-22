@@ -1,0 +1,24 @@
+Ready> Read function definition:define double @"binary;"(double %x, double %y) {
+entry:
+  ret double %y
+}
+
+Ready> Ready> Read function definition:define double @sum(double %x) {
+entry:
+  br label %loop
+
+loop:                                             ; preds = %loop, %entry
+  %ret.0 = phi double [ 0.000000e+00, %entry ], [ %addtmp, %loop ]
+  %i.0 = phi double [ 0.000000e+00, %entry ], [ %nextvar, %loop ]
+  %addtmp = fadd double %ret.0, %i.0
+  %cmptmp = fcmp ult double %i.0, %x
+  %nextvar = fadd double %i.0, 1.000000e+00
+  br i1 %cmptmp, label %loop, label %afterloop
+
+afterloop:                                        ; preds = %loop
+  %binop = call double @"binary;"(double 0.000000e+00, double %addtmp)
+  ret double %binop
+}
+
+Ready> Evaluated to 28.000000.
+Ready> %

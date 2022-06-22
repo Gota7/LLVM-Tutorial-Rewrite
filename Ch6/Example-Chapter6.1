@@ -1,0 +1,20 @@
+Ready> Read function definition:define double @"binary&"(double %l, double %r) {
+entry:
+  %ifcond = fcmp ueq double %l, 0.000000e+00
+  %ifcond1 = fcmp ueq double %r, 0.000000e+00
+  %. = select i1 %ifcond1, double 0.000000e+00, double 1.000000e+00
+  %iftmp5 = select i1 %ifcond, double 0.000000e+00, double %.
+  ret double %iftmp5
+}
+
+Ready> Read function definition:define double @test(double %a, double %b) {
+entry:
+  %binop = call double @"binary&"(double %a, double %b)
+  ret double %binop
+}
+
+Ready> Evaluated to 0.000000.
+Ready> Evaluated to 0.000000.
+Ready> Evaluated to 0.000000.
+Ready> Evaluated to 1.000000.
+Ready> %

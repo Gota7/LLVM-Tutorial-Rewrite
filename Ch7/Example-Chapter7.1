@@ -1,0 +1,13 @@
+Ready> Read function definition:define double @"binary;"(double %x, double %y) {
+entry:
+  ret double %y
+}
+
+Ready> Ready> Read function definition:define double @test(double %x) {
+entry:
+  %binop = call double @"binary;"(double 7.000000e+00, double 7.000000e+00)
+  ret double %binop
+}
+
+Ready> Evaluated to 7.000000.
+Ready> % 
